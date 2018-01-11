@@ -22,6 +22,10 @@ public class Playerv2 : MonoBehaviour {
 	void Start () {
 		maxSpeedSq = Mathf.Pow (maxSpeed, 2f);
 		startScaleY = transform.localScale.y;
+
+		if (SceneManager.GetActiveScene().buildIndex != 0) {
+			CanMove = true;
+		}
 	}
 	
 	// Update is called once per frame

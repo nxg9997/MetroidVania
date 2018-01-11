@@ -8,6 +8,7 @@ public class SpikeSwing : MonoBehaviour {
 	public float aps; //angle per second
 	public int direction; // 0 for left, 1 for right
 	public float startAng;
+	public bool Circle = false;
 
 	// Use this for initialization
 	void Start () {
@@ -16,18 +17,29 @@ public class SpikeSwing : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (direction == 0) {
-			startAng -= aps;
-			transform.rotation = Quaternion.AngleAxis (startAng, Vector3.back);
-			if (startAng < -maxAngle) {
-				direction = 1;
+		if (Circle) {
+			if (direction == 0) {
+				startAng -= aps;
+				transform.rotation = Quaternion.AngleAxis (startAng, Vector3.back);
+			}
+			else if (direction == 1) {
+				startAng += aps;
+				transform.rotation = Quaternion.AngleAxis (startAng, Vector3.back);
 			}
 		}
-		else if (direction == 1) {
-			startAng += aps;
-			transform.rotation = Quaternion.AngleAxis (startAng, Vector3.back);
-			if (startAng > maxAngle) {
-				direction = 0;
+		else {
+			if (direction == 0) {
+				startAng -= aps;
+				transform.rotation = Quaternion.AngleAxis (startAng, Vector3.back);
+				if (startAng < -maxAngle) {
+					direction = 1;
+				}
+			} else if (direction == 1) {
+				startAng += aps;
+				transform.rotation = Quaternion.AngleAxis (startAng, Vector3.back);
+				if (startAng > maxAngle) {
+					direction = 0;
+				}
 			}
 		}
 	}
