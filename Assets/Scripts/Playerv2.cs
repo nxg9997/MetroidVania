@@ -15,7 +15,7 @@ public class Playerv2 : MonoBehaviour {
 	private int vertScaleCtrl = 0;
 	public bool CanMove = false;
 	private float maxSpeedSq;
-	private bool CanJump = false;
+	public bool CanJump = false;
 	private bool CanLandAnim = false;
 
 	// Use this for initialization
@@ -30,6 +30,7 @@ public class Playerv2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		Debug.Log (CanJump);
 		Vector3 ultimate = Vector3.zero;
 		if (Input.GetKeyDown (KeyCode.Space) && CanJump && CanMove) {
 			//GetComponent<Rigidbody2D> ().AddForce (jumpVec);
@@ -65,8 +66,9 @@ public class Playerv2 : MonoBehaviour {
 			SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
 		}
 
-		CanJump = true;
-
+		if (col.gameObject.tag == "platform") {
+			CanJump = true;
+		}
 		/*int layerMask = 1 << 8;
 
 		layerMask = ~layerMask;
@@ -90,7 +92,13 @@ public class Playerv2 : MonoBehaviour {
 	}
 
 	void OnCollisionStay2D(Collision2D col){
-		CanJump = true;
+		if (col.gameObject.tag == "platform") {
+			CanJump = true;
+		}
+	}
+
+	void OnCollisionExit2D(Collision2D col){
+		CanJump = false;
 	}
 
 	void OnTriggerStay2D(Collider2D col){
