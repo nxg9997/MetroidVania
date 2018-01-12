@@ -85,7 +85,7 @@ public abstract class Vehicle : MonoBehaviour {
 	}
 
 	void SetTrasform () {
-		//gameObject.transform.forward = direction;
+		gameObject.transform.right = -direction;
 		//position = new Vector3 (position.x, 0.1f, position.z);
 		transform.position = position;
 	}

@@ -46,15 +46,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Boss1Script.cs" />
+     <Compile Include="Assets\Scripts\BossHealthScript.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\FanScript.cs" />
+     <Compile Include="Assets\Scripts\GenFiles.cs" />
+     <Compile Include="Assets\Scripts\LazerScript.cs" />
+     <Compile Include="Assets\Scripts\MissleScript.cs" />
      <Compile Include="Assets\Scripts\NextLevel.cs" />
+     <Compile Include="Assets\Scripts\OverlayScript.cs" />
      <Compile Include="Assets\Scripts\Physics.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Playerv2.cs" />
      <Compile Include="Assets\Scripts\SpikeCamTrigger.cs" />
      <Compile Include="Assets\Scripts\SpikeSwing.cs" />
      <Compile Include="Assets\Scripts\StartButton.cs" />
+     <Compile Include="Assets\Scripts\TimedLazers.cs" />
      <Compile Include="Assets\Scripts\Vehicle.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

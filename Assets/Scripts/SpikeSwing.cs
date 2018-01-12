@@ -12,7 +12,7 @@ public class SpikeSwing : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		//startAng = transform.rotation.z;
 	}
 	
 	// Update is called once per frame
